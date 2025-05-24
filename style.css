@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(14deg, rgba(190, 125, 255, 0.772), rgba(29, 133, 119, 0.269));
+}
+
+.cannette {
+    --value: -213px;
+    min-width:320px;
+    aspect-ratio: 3/4.25;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: .5s ease-in-out;
+    height:auto;
+    transform: translate(-50%, -50%);
+    background: url(images/paketing_soda.png)  var(--value) 100% repeat, center  url(images/cannette.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    mask-image:url(images/cannette.png);
+    mask-size:cover ;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url(images/cannette.png);
+    -webkit-mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    overflow: hidden;
+}
+
+.cannette:hover{
+    rotate: 10deg;
+    cursor: pointer;
+    --value: 0;
+}
+
+
+.text{
+    position: relative;
+    transform: translateY(200px);
+    overflow: hidden;
+    height: 3.2rem;
+}
+
+.text-name{
+    color:transparent;
+    background: url(images/paketing_soda.png) 100% ;
+    background-clip: text;
+    background-position:center;
+    -webkit-text-stroke: 2px rgb(2, 143, 190);
+    font-size: 3.2rem;
+    transition:.5s ease-in-out;
+    transform:translateY(111px);
+}
+
+.cannette:hover + .text .text-name{
+    transform:translateY(0px);
+}
